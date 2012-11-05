@@ -831,8 +831,9 @@
 
 #ifdef AeroQuadMega_CHR6DM
   #define LED_Green 13
-  #define LED_Red 4
-  #define LED_Yellow 31
+  //#define LED_Red 4
+  #define LED_Red 31 //blue
+  #define LED_Yellow 4 //red
 
   #include <Device_I2C.h>
   #include <Platform_CHR6DM.h>
@@ -848,7 +849,7 @@
   #define RECEIVER_MEGA
 
   // Motor declaration
-  #define MOTOR_PWM
+  #define MOTOR_PWM_Timer
 
   // Kinematics declaration
   #include "Kinematics_CHR6DM.h"
@@ -887,6 +888,10 @@
    * Put AeroQuadMega_CHR6DM specific initialization need here
    */
   void initPlatform() {
+    pinMode(LED_Red, OUTPUT);
+    pinMode(LED_Yellow, OUTPUT);
+    pinMode(LED_Green, OUTPUT);
+    
     Serial1.begin(BAUD);
     PORTD = B00000100;
 
