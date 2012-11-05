@@ -33,12 +33,12 @@
 
 // Mega platform
 //#define AeroQuadMega_v1     // Arduino Mega with AeroQuad Shield v1.7 and below
-#define AeroQuadMega_v2     // Arduino Mega with AeroQuad Shield v2.0
+//#define AeroQuadMega_v2     // Arduino Mega with AeroQuad Shield v2.0
 //#define AeroQuadMega_v21    // Arduino Mega with AeroQuad Shield v2.1
 //#define AutonavShield       // Really good board for the guy here http://aeroquad.com/showthread.php?4106-New-Shield-available-Mega-AutoNav-Shield&highlight=autonav
 //#define AeroQuadMega_Wii    // Arduino Mega with Wii Sensors and AeroQuad Shield v2.x
 //#define ArduCopter          // ArduPilot Mega (APM) with Oilpan Sensor Board
-//#define AeroQuadMega_CHR6DM // Clean Arduino Mega with CHR6DM as IMU/heading ref.
+#define AeroQuadMega_CHR6DM // Clean Arduino Mega with CHR6DM as IMU/heading ref.
 //#define APM_OP_CHR6DM       // ArduPilot Mega with CHR6DM as IMU/heading ref., Oilpan for barometer (just uncomment AltitudeHold for baro), and voltage divider
 
 
@@ -83,8 +83,8 @@
 //#define AltitudeHoldRangeFinder // Enable altitude hold with range finder, Not displayed on the configurator
 //#define AutoLanding // Enable auto landing on channel AUX3 of the remote, NEED AltitudeHoldBaro AND AltitudeHoldRangeFinder
 
-#define UseGPS // Try to auto-detect the GPS, may have some detection trouble making the connection to the configurator not working
-#define UseGPSNavigator // EXPERIMENTAL NEED UseGPS TO BE DEFINED, enable GPS position hold, auto return home when no mission or execute mission
+//#define UseGPS // Try to auto-detect the GPS, may have some detection trouble making the connection to the configurator not working
+//#define UseGPSNavigator // EXPERIMENTAL NEED UseGPS TO BE DEFINED, enable GPS position hold, auto return home when no mission or execute mission
 
 //
 // *******************************************************************************************************************************
@@ -94,6 +94,8 @@
 //#define BattMonitor            // Enable Battery monitor
 //#define BattMonitorAutoDescent // NEED BattMonitor defined. if you want the craft to auto descent when the battery reach the alarm voltage
 //#define POWERED_BY_VIN         // NEED BattMonitor defined. Uncomment this if your v2.x is powered directly by the vin/gnd of the arduino
+// FROM first config but not yet enabled
+//#define BattCustomConfig DEFINE_BATTERY(3,A0,15,0.0,BM_NOPIN,0,0) // 10.4V when actually 10.6V
 //
 // Advanced configuration. Please refer to wiki for instructions
 //#define BattCustomConfig DEFINE_BATTERY( 3,0,15,0,2,50,0)
@@ -109,7 +111,7 @@
 //#define ReceiverHWPPM // Use a ppm receiver with HW timer, needs a HW modification (see Libraries/AQ_Receiver/Receiver_HWPPM.h)
 // You need to select one of these channel order definitions for PPM receiver
 //#define SKETCH_SERIAL_SUM_PPM SERIAL_SUM_PPM_1 //For Graupner/Spektrum (DEFAULT)
-#define SKETCH_SERIAL_SUM_PPM SERIAL_SUM_PPM_2 //For Robe/Hitec/Futaba
+//#define SKETCH_SERIAL_SUM_PPM SERIAL_SUM_PPM_2 //For Robe/Hitec/Futaba
 //#define SKETCH_SERIAL_SUM_PPM SERIAL_SUM_PPM_3 //For some Hitec/Sanwa/Others
 
 //#define UseRSSIFaileSafe // read rssi for receiver failsafe NEED A RECEIVER WITH FAILSAVE CONNECTED ON PIN A6 OF THE SHIELD
@@ -120,8 +122,8 @@
 // Please note that the flight software currently only supports 6 channels, additional channels will be supported in the future
 // Additionally 8 receiver channels are only available when not using the Arduino Uno
 // *******************************************************************************************************************************
-//#define LASTCHANNEL 6
-#define LASTCHANNEL 8 // - warning, this needs to be debugged, incorrect COM behaviour appears when selecting this
+#define LASTCHANNEL 6
+//#define LASTCHANNEL 8 // - warning, this needs to be debugged, incorrect COM behaviour appears when selecting this
 
 
 //
@@ -129,7 +131,7 @@
 // Optional telemetry (for debug or ground station tracking purposes)
 // For more information on how to setup Telemetry please refer to http://aeroquad.com/showwiki.php?title=Xbee+Installation
 // *******************************************************************************************************************************
-//#define WirelessTelemetry  // Enables Wireless telemetry on Serial3  // Wireless telemetry enable
+#define WirelessTelemetry  // Enables Wireless telemetry on Serial3  // Wireless telemetry enable
 
 //
 // *******************************************************************************************************************************
